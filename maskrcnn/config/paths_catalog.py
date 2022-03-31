@@ -9,7 +9,7 @@ import os
 
 
 class DatasetCatalog(object):
-    DATA_DIR = "/data/"
+    DATA_DIR = "./data/"
     DATASETS = {
         "DeepLesion_train": {
             "data_dir": "DeepLesion/Images_png",
