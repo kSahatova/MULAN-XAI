@@ -51,7 +51,8 @@ def load_tag_dict_from_xlsfile(fn):
     """Load ontology"""
     cellname = lambda row, col: '%s%d' % (chr(ord('A') + col - 1), row)
     wb = load_workbook(fn)
-    sheet = wb.get_active_sheet()
+    sheet_name = wb.sheetnames
+    sheet = wb[sheets[0]]
     tag_dicts = []
     for p in range(2, sheet.max_row + 1):
         ex = sheet[cellname(p, 6)].value
