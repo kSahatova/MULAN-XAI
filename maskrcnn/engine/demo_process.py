@@ -91,7 +91,8 @@ def import_tag_data():
     fn = os.path.join(cfg.PROGDAT_DIR, '%s_%s.xlsx' % ('test_handlabeled', cfg.EXP_NAME))
 
     wb = load_workbook(fn)
-    sheet = wb.get_active_sheet()
+    sheetnames = wb.sheetnames
+    sheet = wb[sheetnames[0]]
     tags = []
     thresolds = []
     for p in range(2, sheet.max_row):
